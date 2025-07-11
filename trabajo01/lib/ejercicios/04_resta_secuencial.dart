@@ -1,12 +1,14 @@
 import 'dart:io';
 
 void restaSecuencial() {
-  stdout.write("Ingrese el primer número: ");
-  double a = double.parse(stdin.readLineSync()!);
+  stdout.write("Digita el número inicial: ");
+  double primerNumero = double.parse(stdin.readLineSync()!);
 
-  stdout.write("Ingrese el segundo número: ");
-  double b = double.parse(stdin.readLineSync()!);
+  stdout.write("Digita el número a restar: ");
+  double segundoNumero = double.parse(stdin.readLineSync()!);
 
-  double resta = a - b;
-  print("La diferencia del número $a con el número $b es: $resta");
+  double resultadoResta = primerNumero - segundoNumero;
+
+  print("\n🔻 Resultado de la resta:");
+  print("$primerNumero - $segundoNumero = $resultadoResta");
 }

@@ -2,22 +2,22 @@ import 'dart:io';
 import 'dart:math';
 
 void cilindroConTapa() {
-  stdout.write("Radio: ");
-  double radio = double.parse(stdin.readLineSync()!);
+  stdout.write("Ingrese el valor del radio: ");
+  double r = double.parse(stdin.readLineSync()!);
 
-  stdout.write("Altura: ");
-  double altura = double.parse(stdin.readLineSync()!);
+  stdout.write("Ingrese la altura del cilindro: ");
+  double h = double.parse(stdin.readLineSync()!);
 
-  if (radio <= 0 || altura <= 0) {
-    print("Dimensiones inválidas.");
+  if (r <= 0 || h <= 0) {
+    print("Error: El radio y la altura deben ser mayores que cero.");
     return;
   }
 
-  double areaLateral = 2 * pi * radio * altura;
-  double areaTapa = pi * pow(radio, 2);
-  double areaTotal = areaLateral + 2 * areaTapa;
-  double volumen = areaTapa * altura;
+  double superficieLateral = 2 * pi * r * h;
+  double superficieBase = pi * pow(r, 2);
+  double superficieTotal = superficieLateral + 2 * superficieBase;
+  double capacidad = superficieBase * h;
 
-  print("Área total: ${areaTotal.toStringAsFixed(2)} unidades²");
-  print("Volumen: ${volumen.toStringAsFixed(2)} unidades³");
+  print("Superficie total del cilindro cerrado: ${superficieTotal.toStringAsFixed(2)} unidades cuadradas");
+  print("Volumen interno del cilindro: ${capacidad.toStringAsFixed(2)} unidades cúbicas");
 }

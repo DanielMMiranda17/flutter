@@ -2,50 +2,63 @@ import 'dart:io';
 import 'dart:math';
 
 void menuFiguras() {
-  print("Seleccione una figura:");
-  print("1. Triángulo");
-  print("2. Rectángulo");
-  print("3. Círculo");
+  print("FIGURAS GEOMÉTRICAS DISPONIBLES");
+  print("1 - Triángulo");
+  print("2 - Rectángulo");
+  print("3 - Círculo");
 
-  stdout.write("Opción: ");
-  int opcion = int.parse(stdin.readLineSync()!);
+  stdout.write("Ingrese el número correspondiente a la figura: ");
+  int seleccion = int.parse(stdin.readLineSync()!);
 
-  switch (opcion) {
+  switch (seleccion) {
     case 1:
-      stdout.write("Base: ");
-      double base = double.parse(stdin.readLineSync()!);
-      stdout.write("Altura: ");
-      double altura = double.parse(stdin.readLineSync()!);
-      stdout.write("Lado 1: ");
-      double lado1 = double.parse(stdin.readLineSync()!);
-      stdout.write("Lado 2: ");
-      double lado2 = double.parse(stdin.readLineSync()!);
-      stdout.write("Lado 3: ");
-      double lado3 = double.parse(stdin.readLineSync()!);
-      double area = (base * altura) / 2;
-      double perimetro = lado1 + lado2 + lado3;
-      print("Área: $area unidades²");
-      print("Perímetro: $perimetro unidades");
+      stdout.write("Ingrese la base del triángulo: ");
+      double b = double.parse(stdin.readLineSync()!);
+      stdout.write("Ingrese la altura del triángulo: ");
+      double h = double.parse(stdin.readLineSync()!);
+
+      stdout.write("Lado A: ");
+      double ladoA = double.parse(stdin.readLineSync()!);
+      stdout.write("Lado B: ");
+      double ladoB = double.parse(stdin.readLineSync()!);
+      stdout.write("Lado C: ");
+      double ladoC = double.parse(stdin.readLineSync()!);
+
+      double areaTri = (b * h) / 2;
+      double periTri = ladoA + ladoB + ladoC;
+
+      print("Resultado:");
+      print("Área del triángulo: $areaTri unidades cuadradas");
+      print("Perímetro del triángulo: $periTri unidades");
       break;
+
     case 2:
-      stdout.write("Largo: ");
+      stdout.write("Lado mayor (largo): ");
       double largo = double.parse(stdin.readLineSync()!);
-      stdout.write("Ancho: ");
+      stdout.write("Lado menor (ancho): ");
       double ancho = double.parse(stdin.readLineSync()!);
-      double area = largo * ancho;
-      double perimetro = 2 * (largo + ancho);
-      print("Área: $area unidades²");
-      print("Perímetro: $perimetro unidades");
+
+      double areaRect = largo * ancho;
+      double periRect = 2 * (largo + ancho);
+
+      print("Resultado:");
+      print("Área del rectángulo: $areaRect unidades cuadradas");
+      print("Perímetro del rectángulo: $periRect unidades");
       break;
+
     case 3:
-      stdout.write("Radio: ");
-      double radio = double.parse(stdin.readLineSync()!);
-      double area = pi * pow(radio, 2);
-      double perimetro = 2 * pi * radio;
-      print("Área: ${area.toStringAsFixed(2)} unidades²");
-      print("Perímetro: ${perimetro.toStringAsFixed(2)} unidades");
+      stdout.write("Ingrese el radio del círculo: ");
+      double r = double.parse(stdin.readLineSync()!);
+
+      double areaCirc = pi * pow(r, 2);
+      double periCirc = 2 * pi * r;
+
+      print("Resultado:");
+      print("Área del círculo: ${areaCirc.toStringAsFixed(2)} unidades cuadradas");
+      print("Perímetro del círculo: ${periCirc.toStringAsFixed(2)} unidades");
       break;
+
     default:
-      print("Opción inválida.");
+      print("La opción ingresada no es válida.");
   }
 }

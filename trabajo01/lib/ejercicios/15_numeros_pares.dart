@@ -1,8 +1,7 @@
 void numerosPares() {
-  print("Números pares del 1 al 100:");
-  for (int i = 1; i <= 100; i++) {
-    if (i % 2 == 0) {
-      print(i);
-    }
+  print("Listado de números pares entre 1 y 100:\n");
+
+  for (int numero = 2; numero <= 100; numero += 2) {
+    print(numero);
   }
 }

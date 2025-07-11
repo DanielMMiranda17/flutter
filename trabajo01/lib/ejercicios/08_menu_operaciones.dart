@@ -3,92 +3,93 @@ import 'dart:math';
 
 void menuOperaciones() {
   print('''
-Selecciona una operación:
-1. Suma
-2. Resta
-3. Multiplicación
-4. División
-5. Módulo
-6. Cuadrado
-7. Raíz cuadrada
-8. Potencia
-9. Porcentaje
-10. Número aleatorio
+ MENÚ DE OPERACIONES DISPONIBLES
+-----------------------------------
+1️  Sumar
+2️  Restar
+3️  Multiplicar
+4️  Dividir
+5️  Módulo (Residuo)
+6️  Elevar al cuadrado
+7️  Raíz cuadrada
+8️  Potencia
+9️  Porcentaje de un número
+10  Número aleatorio (1 - 100)
 ''');
 
-  stdout.write("Opción: ");
-  int opcion = int.parse(stdin.readLineSync()!);
+  stdout.write(" Elige una opción (1-10): ");
+  int eleccion = int.parse(stdin.readLineSync()!);
 
-  double a, b;
-  switch (opcion) {
+  double x, y;
+  switch (eleccion) {
     case 1:
-      stdout.write("A: ");
-      a = double.parse(stdin.readLineSync()!);
-      stdout.write("B: ");
-      b = double.parse(stdin.readLineSync()!);
-      print("Resultado: ${a + b}");
+      stdout.write(" Primer número: ");
+      x = double.parse(stdin.readLineSync()!);
+      stdout.write(" Segundo número: ");
+      y = double.parse(stdin.readLineSync()!);
+      print(" Resultado de la suma: ${x + y}");
       break;
     case 2:
-      stdout.write("A: ");
-      a = double.parse(stdin.readLineSync()!);
-      stdout.write("B: ");
-      b = double.parse(stdin.readLineSync()!);
-      print("Resultado: ${a - b}");
+      stdout.write(" Número base: ");
+      x = double.parse(stdin.readLineSync()!);
+      stdout.write(" Número a restar: ");
+      y = double.parse(stdin.readLineSync()!);
+      print(" Resultado de la resta: ${x - y}");
       break;
     case 3:
-      stdout.write("A: ");
-      a = double.parse(stdin.readLineSync()!);
-      stdout.write("B: ");
-      b = double.parse(stdin.readLineSync()!);
-      print("Resultado: ${a * b}");
+      stdout.write(" Primer número: ");
+      x = double.parse(stdin.readLineSync()!);
+      stdout.write(" Segundo número: ");
+      y = double.parse(stdin.readLineSync()!);
+      print(" Resultado de la multiplicación: ${x * y}");
       break;
     case 4:
-      stdout.write("A: ");
-      a = double.parse(stdin.readLineSync()!);
-      stdout.write("B: ");
-      b = double.parse(stdin.readLineSync()!);
-      if (b == 0) {
-        print("No se puede dividir por cero.");
+      stdout.write(" Dividendo: ");
+      x = double.parse(stdin.readLineSync()!);
+      stdout.write(" Divisor: ");
+      y = double.parse(stdin.readLineSync()!);
+      if (y == 0) {
+        print(" Error: No se puede dividir por cero.");
       } else {
-        print("Resultado: ${a / b}");
+        print(" Resultado de la división: ${x / y}");
       }
       break;
     case 5:
-      stdout.write("A: ");
-      a = double.parse(stdin.readLineSync()!);
-      stdout.write("B: ");
-      b = double.parse(stdin.readLineSync()!);
-      print("Resultado: ${a % b}");
+      stdout.write(" Número A: ");
+      x = double.parse(stdin.readLineSync()!);
+      stdout.write(" Número B: ");
+      y = double.parse(stdin.readLineSync()!);
+      print(" Residuo de A % B: ${x % y}");
       break;
     case 6:
-      stdout.write("Número: ");
-      a = double.parse(stdin.readLineSync()!);
-      print("Cuadrado: ${a * a}");
+      stdout.write(" Número a elevar: ");
+      x = double.parse(stdin.readLineSync()!);
+      print(" Cuadrado de $x: ${x * x}");
       break;
     case 7:
-      stdout.write("Número: ");
-      a = double.parse(stdin.readLineSync()!);
-      print("Raíz cuadrada: ${sqrt(a)}");
+      stdout.write(" Número para raíz cuadrada: ");
+      x = double.parse(stdin.readLineSync()!);
+      print(" Raíz cuadrada de $x: ${sqrt(x)}");
       break;
     case 8:
-      stdout.write("Base: ");
-      a = double.parse(stdin.readLineSync()!);
-      stdout.write("Exponente: ");
-      b = double.parse(stdin.readLineSync()!);
-      print("Potencia: ${pow(a, b)}");
+      stdout.write(" Base: ");
+      x = double.parse(stdin.readLineSync()!);
+      stdout.write(" Exponente: ");
+      y = double.parse(stdin.readLineSync()!);
+      print(" Resultado de la potencia: ${pow(x, y)}");
       break;
     case 9:
-      stdout.write("Número: ");
-      a = double.parse(stdin.readLineSync()!);
-      stdout.write("Porcentaje (%): ");
-      b = double.parse(stdin.readLineSync()!);
-      print("Resultado: ${a * (b / 100)}");
+      stdout.write(" Número base: ");
+      x = double.parse(stdin.readLineSync()!);
+      stdout.write(" Porcentaje (%): ");
+      y = double.parse(stdin.readLineSync()!);
+      print(" $y% de $x es: ${x * (y / 100)}");
       break;
     case 10:
-      var random = Random();
-      print("Número aleatorio entre 1 y 100: ${random.nextInt(100) + 1}");
+      var aleatorio = Random();
+      print(" Tu número aleatorio entre 1 y 100 es: ${aleatorio.nextInt(100) + 1}");
       break;
     default:
-      print("Opción no válida");
+      print(" Opción no válida. Intenta de nuevo.");
   }
 }

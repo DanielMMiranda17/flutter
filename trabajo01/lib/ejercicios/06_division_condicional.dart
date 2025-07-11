@@ -1,16 +1,17 @@
 import 'dart:io';
 
 void divisionCondicional() {
-  stdout.write("Ingrese el numerador: ");
-  double a = double.parse(stdin.readLineSync()!);
+  stdout.write("Digite el valor del numerador: ");
+  double dividendo = double.parse(stdin.readLineSync()!);
 
-  stdout.write("Ingrese el denominador: ");
-  double b = double.parse(stdin.readLineSync()!);
+  stdout.write("Digite el valor del denominador: ");
+  double divisor = double.parse(stdin.readLineSync()!);
 
-  if (b == 0) {
-    print("Imposible la división por 0");
+  if (divisor == 0) {
+    print("No se puede dividir entre cero, Hazlo otra vez.");
   } else {
-    double resultado = a / b;
-    print("La división del número $a entre el número $b es: $resultado");
+    double cociente = dividendo / divisor;
+    print("\n➗ Resultado de la división:");
+    print("$dividendo ÷ $divisor = $cociente");
   }
 }

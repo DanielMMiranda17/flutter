@@ -1,25 +1,25 @@
 import 'dart:math';
 
 void dadosParques() {
-  var random = Random();
-  int intentos = 0;
+  final rng = Random();
+  int repeticiones = 0;
 
-  while (intentos < 3) {
-    int dado1 = random.nextInt(6) + 1;
-    int dado2 = random.nextInt(6) + 1;
+  while (repeticiones < 3) {
+    int primerDado = rng.nextInt(6) + 1;
+    int segundoDado = rng.nextInt(6) + 1;
 
-    print("Dados: $dado1 y $dado2");
+    print("Resultado: $primerDado - $segundoDado");
 
-    if (dado1 == dado2) {
-      intentos++;
-      if (intentos == 3) {
-        print("¡Saca una ficha!");
+    if (primerDado == segundoDado) {
+      repeticiones++;
+      if (repeticiones == 3) {
+        print("¡Tienes luz verde para sacar ficha!");
         break;
       } else {
-        print("Lanzar de nuevo");
+        print("¡Par otra vez! Lanza de nuevo...");
       }
     } else {
-      print("¡Lanza de nuevo!");
+      print("No sacaste par. Turno perdido.");
       break;
     }
   }

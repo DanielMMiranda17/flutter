@@ -1,9 +1,13 @@
 void todasTablasMultiplicar() {
-  for (int i = 1; i <= 10; i++) {
-    print("Tabla del $i");
-    for (int j = 1; j <= 10; j++) {
-      print("$i x $j = ${i * j}");
+  List.generate(10, (index) {
+    int numero = index + 1;
+    print("Tabla del número $numero:");
+
+    for (int multiplicador = 1; multiplicador <= 10; multiplicador++) {
+      int resultado = numero * multiplicador;
+      print("$numero x $multiplicador = $resultado");
     }
-    print(""); // estoy generando líneas vacías entre tablas
-  }
+
+    print(""); // Estoy dando lineas de espacios vacios
+  });
 }

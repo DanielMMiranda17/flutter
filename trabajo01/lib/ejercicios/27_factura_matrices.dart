@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void facturaConMatrices() {
-  List<List<dynamic>> productos = [
+  List<List<dynamic>> inventario = [
     [1, "Arroz", 2500, true],
     [2, "Pan", 1000, false],
     [3, "Leche", 4000, true],
@@ -14,47 +14,50 @@ void facturaConMatrices() {
     [10, "Chocolate", 4500, false],
   ];
 
-  List<List<dynamic>> factura = [];
+  List<List<dynamic>> pedido = [];
+  bool sigue = true;
+  int contador = 1;
 
-  bool continuar = true;
-  int item = 1;
-  while (continuar && item <= 10) {
-    stdout.write("Ingrese ID del producto: ");
-    int id = int.parse(stdin.readLineSync()!);
+  while (sigue && contador <= 10) {
+    stdout.write("Digite el código del producto: ");
+    int codigo = int.parse(stdin.readLineSync()!);
 
-    var producto = productos.firstWhere((p) => p[0] == id, orElse: () => []);
+    var articulo = inventario.firstWhere(
+      (item) => item[0] == codigo,
+      orElse: () => [],
+    );
 
-    if (producto.isEmpty) {
-      print("Producto no encontrado.");
+    if (articulo.isEmpty) {
+      print("Producto inexistente.");
       continue;
     }
 
-    stdout.write("¿Cuántos desea llevar?: ");
+    stdout.write("Cantidad a comprar: ");
     int cantidad = int.parse(stdin.readLineSync()!);
 
-    int valorUnidad = producto[2];
-    bool tieneIVA = producto[3];
-    double iva = tieneIVA ? valorUnidad * 0.19 * cantidad : 0;
-    double total = (valorUnidad * cantidad) + iva;
+    int precioUnitario = articulo[2];
+    bool aplicaIVA = articulo[3];
+    double montoIVA = aplicaIVA ? precioUnitario * 0.19 * cantidad : 0;
+    double subtotal = (precioUnitario * cantidad) + montoIVA;
 
-    factura.add([
-      item,
-      producto[0],
-      producto[1],
+    pedido.add([
+      contador,
+      articulo[0],
+      articulo[1],
       cantidad,
-      valorUnidad,
-      iva,
-      total
+      precioUnitario,
+      montoIVA,
+      subtotal
     ]);
-    item++;
+    contador++;
 
-    stdout.write("¿Desea ingresar otro producto? (s/n): ");
-    continuar = stdin.readLineSync()!.toLowerCase() == 's';
+    stdout.write("¿Desea añadir otro producto? (s/n): ");
+    sigue = stdin.readLineSync()!.toLowerCase() == 's';
   }
 
-  print("\nFACTURA:");
-  print("Item | ID | Producto | Cant | V.Unit | IVA | Total");
-  for (var fila in factura) {
+  print("\n===== FACTURA =====");
+  print("No. | ID | Producto | Cantidad | Precio U. | IVA | Total");
+  for (var fila in pedido) {
     print(fila.join(" | "));
   }
 }

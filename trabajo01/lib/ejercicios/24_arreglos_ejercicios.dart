@@ -1,11 +1,12 @@
 void arregloEjercicios() {
-  List<int> lista = [5, 3, 9, 1, 6, 8, 2, 4, 7, 0];
+  List<int> numeros = [5, 3, 9, 1, 6, 8, 2, 4, 7, 0];
 
-  print("Orden Ascendente:");
-  List<int> ascendente = [...lista]..sort();
-  print(ascendente);
+  print("Lista ordenada de menor a mayor:");
+  var ordenMenorMayor = List.of(numeros)..sort();
+  print(ordenMenorMayor);
 
-  print("Orden Descendente:");
-  List<int> descendente = [...lista]..sort((a, b) => b.compareTo(a));
-  print(descendente);
+  print("Lista ordenada de mayor a menor:");
+  var ordenMayorMenor = List.of(numeros)
+    ..sort((x, y) => y.compareTo(x));
+  print(ordenMayorMenor);
 }

@@ -1,12 +1,14 @@
 import 'dart:io';
 
-void sumaSecuencial() {
-  stdout.write("Ingrese el primer número: ");
-  double a = double.parse(stdin.readLineSync()!);
+void SumaSecuencial() {
+  stdout.write("Digita el primer valor: ");
+  double primerValor = double.parse(stdin.readLineSync()!);
 
-  stdout.write("Ingrese el segundo número: ");
-  double b = double.parse(stdin.readLineSync()!);
+  stdout.write("Digita el segundo valor: ");
+  double segundoValor = double.parse(stdin.readLineSync()!);
 
-  double suma = a + b;
-  print("La suma del número $a con el número $b es: $suma");
+  double resultado = primerValor + segundoValor;
+
+  print("\n✅ Resultado:");
+  print("$primerValor + $segundoValor = $resultado");
 }

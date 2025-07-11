@@ -1,8 +1,7 @@
 void multiploDe2y3() {
-  print("Múltiplos de 2 y 3 del 1 al 100:");
-  for (int i = 1; i <= 100; i++) {
-    if (i % 2 == 0 && i % 3 == 0) {
-      print(i);
-    }
+  print("Números entre 1 y 100 que son divisibles tanto por 2 como por 3:\n");
+
+  for (int numero = 6; numero <= 100; numero += 6) {
+    print(numero);
   }
 }

@@ -1,24 +1,25 @@
 import 'dart:io';
 
-void variablesEntrada() {
-  stdout.write("Ingrese su nombre: ");
-  String? nombre = stdin.readLineSync();
+void capturarDatosUsuario() {
+  stdout.write("¿Cuál es tu nombre?: ");
+  String? nombrePersona = stdin.readLineSync();
 
-  stdout.write("Ingrese su sexo: ");
-  String? sexo = stdin.readLineSync();
+  stdout.write("¿Cuál es tu género?: ");
+  String? genero = stdin.readLineSync();
 
-  stdout.write("Ingrese su edad: ");
-  int edad = int.parse(stdin.readLineSync()!);
+  stdout.write("¿Cuántos años tienes?: ");
+  int anios = int.parse(stdin.readLineSync()!);
 
-  stdout.write("Ingrese su salario: ");
-  double salario = double.parse(stdin.readLineSync()!);
+  stdout.write("¿Cuál es tu ingreso mensual?: ");
+  double ingreso = double.parse(stdin.readLineSync()!);
 
-  stdout.write("¿Tiene vehículo? (si/no): ");
-  String? tieneVehiculo = stdin.readLineSync();
+  stdout.write("¿Posees un vehículo? (sí/no): ");
+  String? respuestaVehiculo = stdin.readLineSync();
 
-  print("Nombre: $nombre");
-  print("Sexo: $sexo");
-  print("Edad: $edad");
-  print("Salario: \$${salario.toStringAsFixed(2)}");
-  print("¿Tiene vehículo?: ${tieneVehiculo!.toLowerCase() == 'si' ? 'Sí' : 'No'}");
+  
+  print(" Nombre: $nombrePersona");
+  print(" Género: $genero");
+  print(" Edad: $anios años");
+  print(" Ingreso: \$${ingreso.toStringAsFixed(2)}");
+  print(" Vehículo propio: ${respuestaVehiculo!.trim().toLowerCase() == 'sí' ? 'Sí tiene' : 'No tiene'}");
 }

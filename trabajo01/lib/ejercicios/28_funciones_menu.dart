@@ -2,50 +2,48 @@ import 'dart:io';
 
 void funcionesSuma() {
   while (true) {
-    print("\nMENÚ DE SUMA");
-    print("1. Sin parámetros y sin retorno");
-    print("2. Con parámetros y sin retorno");
-    print("3. Sin parámetros y con retorno");
-    print("4. Con parámetros y con retorno");
+    print("\ MENÚ DE SUMAS ");
+    print("1. Suma sin parámetros ni retorno");
+    print("2. Suma con parámetros sin retorno");
+    print("3. Suma sin parámetros con retorno");
+    print("4. Suma con parámetros y retorno");
     print("0. Salir");
-    stdout.write("Opción: ");
-    int op = int.parse(stdin.readLineSync()!);
+    stdout.write("Elija una opción: ");
+    int opcion = int.parse(stdin.readLineSync()!);
 
-    if (op == 0) break;
+    if (opcion == 0) break;
 
-    switch (op) {
+    switch (opcion) {
       case 1:
-        void sinParametrosSinRetorno() {
-          int a = 3, b = 4;
-          print("La suma es: ${a + b}");
+        void sumaSinParamsSinRetorno() {
+          int x = 3, y = 4;
+          print("Resultado: ${x + y}");
         }
-
-        sinParametrosSinRetorno();
+        sumaSinParamsSinRetorno();
         break;
+
       case 2:
-        void conParametrosSinRetorno(int a, int b) {
-          print("La suma es: ${a + b}");
+        void sumaConParamsSinRetorno(int x, int y) {
+          print("Resultado: ${x + y}");
         }
-
-        conParametrosSinRetorno(5, 6);
+        sumaConParamsSinRetorno(5, 6);
         break;
+
       case 3:
-        int sinParametrosConRetorno() {
-          int a = 7, b = 8;
-          return a + b;
+        int sumaSinParamsConRetorno() {
+          int x = 7, y = 8;
+          return x + y;
         }
-
-        print("La suma es: ${sinParametrosConRetorno()}");
+        print("Resultado: ${sumaSinParamsConRetorno()}");
         break;
+
       case 4:
-        int conParametrosConRetorno(int a, int b) {
-          return a + b;
-        }
-
-        print("La suma es: ${conParametrosConRetorno(9, 10)}");
+        int sumaConParamsConRetorno(int x, int y) => x + y;
+        print("Resultado: ${sumaConParamsConRetorno(9, 10)}");
         break;
+
       default:
-        print("Opción inválida");
+        print("Opción no válida, intente de nuevo.");
     }
   }
 }

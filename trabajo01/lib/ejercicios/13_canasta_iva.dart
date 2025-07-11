@@ -1,22 +1,22 @@
 import 'dart:io';
 
 void canastaIVA() {
-  stdout.write("Nombre del artículo: ");
-  String? articulo = stdin.readLineSync();
+  stdout.write("Ingrese el nombre del producto: ");
+  String? producto = stdin.readLineSync();
 
-  stdout.write("Valor unitario: ");
-  double valor = double.parse(stdin.readLineSync()!);
+  stdout.write("Precio por unidad: ");
+  double precioUnitario = double.parse(stdin.readLineSync()!);
 
-  stdout.write("Cantidad: ");
-  int cantidad = int.parse(stdin.readLineSync()!);
+  stdout.write("Número de unidades: ");
+  int unidades = int.parse(stdin.readLineSync()!);
 
-  stdout.write("¿Es de la canasta familiar? (si/no): ");
-  String? esCanasta = stdin.readLineSync();
+  stdout.write("¿Pertenece a la canasta básica? (si/no): ");
+  String? perteneceCanasta = stdin.readLineSync();
 
-  double total = valor * cantidad;
-  if (esCanasta!.toLowerCase() != 'si') {
-    total *= 1.19;
-  }
+  double subtotal = precioUnitario * unidades;
+  double totalFinal = (perteneceCanasta?.trim().toLowerCase() == 'si')
+      ? subtotal
+      : subtotal * 1.19;
 
-  print("Total a pagar: \$${total.toStringAsFixed(2)}");
+  print("El monto total a pagar por '$producto' es: \$${totalFinal.toStringAsFixed(2)}");
 }

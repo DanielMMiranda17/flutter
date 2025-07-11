@@ -1,13 +1,13 @@
-void constantesDatos() {
-  const String nombre = "Daniel";
-  const String sexo = "Masculino";
-  const int edad = 25;
-  const double salario = 1525000.75;
-  const bool tieneVehiculo = true;
+void mostrarInfoPersonal() {
+  const String nombreUsuario = "Daniel";
+  const String genero = "Masculino";
+  const int anios = 25;
+  const double sueldo = 1525000.75;
+  const bool poseeVehiculo = true;
 
-  print("Nombre: $nombre");
-  print("Sexo: $sexo");
-  print("Edad: $edad");
-  print("Salario: \$${salario.toStringAsFixed(2)}");
-  print("¿Tiene vehículo?: ${tieneVehiculo ? 'Sí' : 'No'}");
+  print(" Nombre completo: $nombreUsuario");
+  print(" Género: $genero");
+  print(" Edad: $anios años");
+  print(" Sueldo mensual: \$${sueldo.toStringAsFixed(2)}");
+  print(" ¿Posee vehículo?: ${poseeVehiculo ? 'Sí tiene' : 'No tiene'}");
 }

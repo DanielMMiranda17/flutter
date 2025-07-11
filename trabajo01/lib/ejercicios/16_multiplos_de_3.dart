@@ -1,8 +1,7 @@
 void multiplosDe3() {
-  print("Múltiplos de 3 entre 1 y 300:");
-  for (int i = 1; i <= 300; i++) {
-    if (i % 3 == 0) {
-      print(i);
-    }
+  print("Números divisibles por 3 desde el 1 hasta el 300:\n");
+
+  for (int num = 3; num <= 300; num += 3) {
+    print(num);
   }
 }

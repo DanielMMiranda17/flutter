@@ -1,11 +1,8 @@
 void vectorBasico() {
-  List<int> numeros = List.filled(10, 0);
-  for (int i = 0; i < numeros.length; i++) {
-    numeros[i] = i + 1;
-  }
+  var numeros = List.generate(10, (index) => index + 1);
 
-  print("Contenido del vector:");
-  for (int i = 0; i < numeros.length; i++) {
-    print("Índice $i = ${numeros[i]}");
+  print("Elementos del vector con sus índices:");
+  for (var i = 0; i < numeros.length; i++) {
+    print("Posición [$i] → Valor: ${numeros[i]}");
   }
 }

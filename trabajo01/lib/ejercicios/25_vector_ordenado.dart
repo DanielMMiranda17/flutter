@@ -1,25 +1,27 @@
 import 'dart:io';
 
 void vectorOrdenado() {
-  stdout.write("¿Cuántos elementos quieres? ");
-  int cantidad = int.parse(stdin.readLineSync()!);
+  stdout.write("¿Cuántos números va a ingresar? ");
+  int total = int.parse(stdin.readLineSync()!);
 
-  List<int> numeros = [];
+  List<int> listaNumeros = [];
 
-  for (int i = 0; i < cantidad; i++) {
-    stdout.write("Número ${i + 1}: ");
-    int n = int.parse(stdin.readLineSync()!);
-    numeros.add(n);
+  for (var indice = 1; indice <= total; indice++) {
+    stdout.write("Ingrese el número $indice: ");
+    int valor = int.parse(stdin.readLineSync()!);
+    listaNumeros.add(valor);
   }
 
-  stdout.write("¿Orden ascendente (a) o descendente (d)? ");
-  String orden = stdin.readLineSync()!;
+  stdout.write("¿Desea orden ascendente (a) o descendente (d)? ");
+  String opcionOrden = stdin.readLineSync()!.toLowerCase();
 
-  if (orden == 'a') {
-    numeros.sort();
+  if (opcionOrden == 'a') {
+    listaNumeros.sort();
+  } else if (opcionOrden == 'd') {
+    listaNumeros.sort((x, y) => y.compareTo(x));
   } else {
-    numeros.sort((a, b) => b.compareTo(a));
+    print("Opción no reconocida, mostrando orden original.");
   }
 
-  print("Vector ordenado: $numeros");
+  print("Lista ordenada resultante: $listaNumeros");
 }

@@ -82,13 +82,13 @@ void menuEjercicios() {
         print(' Cerrando el menú...');
         break;
       case 1:
-        constantesDatos();
+        mostrarInfoPersonal();
         break;
       case 2:
-        variablesEntrada();
+        capturarDatosUsuario();
         break;
       case 3:
-        sumaSecuencial();
+        SumaSecuencial();
         break;
       case 4:
         restaSecuencial();

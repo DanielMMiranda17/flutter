@@ -1,27 +1,28 @@
 import 'dart:io';
 
 void combinacionColores() {
-  print("Menú de colores:\n1. Amarillo\n2. Azul\n3. Rojo");
+  print(" Opciones de colores:");
+  print("1️ Amarillo\n2️ Azul\n3️ Rojo");
 
-  stdout.write("Digite el primer número: ");
-  int a = int.parse(stdin.readLineSync()!);
+  stdout.write("Seleccione el primer color (número): ");
+  int primerColor = int.parse(stdin.readLineSync()!);
 
-  stdout.write("Digite el segundo número: ");
-  int b = int.parse(stdin.readLineSync()!);
+  stdout.write("Seleccione el segundo color (número): ");
+  int segundoColor = int.parse(stdin.readLineSync()!);
 
-  String resultado;
+  String mezcla;
 
-  if ((a == 1 && b == 2) || (a == 2 && b == 1)) {
-    resultado = "Verde";
-  } else if ((a == 1 && b == 3) || (a == 3 && b == 1)) {
-    resultado = "Naranja";
-  } else if ((a == 2 && b == 3) || (a == 3 && b == 2)) {
-    resultado = "Violeta";
-  } else if (a == b) {
-    resultado = "Mismo color";
+  if ((primerColor == 1 && segundoColor == 2) || (primerColor == 2 && segundoColor == 1)) {
+    mezcla = " Verde";
+  } else if ((primerColor == 1 && segundoColor == 3) || (primerColor == 3 && segundoColor == 1)) {
+    mezcla = " Naranja";
+  } else if ((primerColor == 2 && segundoColor == 3) || (primerColor == 3 && segundoColor == 2)) {
+    mezcla = " Violeta";
+  } else if (primerColor == segundoColor) {
+    mezcla = " Mismo color seleccionado";
   } else {
-    resultado = "Combinación no válida";
+    mezcla = " Combinación no reconocida";
   }
 
-  print("Su combinación es: $resultado");
+  print("\n Resultado de la mezcla: $mezcla");
 }
